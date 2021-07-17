@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+     
+    <title>CO Detail Analysis</title>
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="{{ url_for('static',filename='logo.jpg') }}"" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>Home</title>
+  
+  
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://pro-next.fontawesome.com/releases/v5.7.2/css/all.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700'>
+<link rel='stylesheet' href='https://getbootstrap.com/docs/4.3/examples/carousel/carousel.css'>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='UserManual.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='tables.css') }}">
+   <!-- <link rel="stylesheet" href= "Stylesheets/clous.css">-->
+
+
+	
+   
+<style>
+
+body {
+  font-family: 'Seoge UI', sans-serif !important;
+	font-size:16px;
+	line-height:1.42857143;
+  padding-top:0;
+}
+hr {
+  margin:0;
+}
+header h6 i {
+    float: left;
+    font-size: 24px;
+    margin: 0;
+        margin-top: 0px;
+        margin-right: 0px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+header h6 span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 18px;    
+}
+.bd-placeholder-img {
+  background: linear-gradient(to right, #5d2d88, #ea4c11);
+}
+#default2.fixed-top {
+   position:fixed;
+   top:0; left:0;
+   width:100%;
+   background-color: #222;
+}
+#logo-small img{
+  max-height:40px;
+}
+#logo-small
+{
+  display:none;
+}
+img.logo {
+  max-width:100%;
+}
+</style>
+
+
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="yes" >
+  <header class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 m-auto d-none d-lg-block">
+        <a href="/Home"><img class="logo" src="{{ url_for('static',filename='logo.jpg') }}" alt=""></a>
+      </div>
+      <div class="col-md-12 col-lg-9">
+        
+        <hr>
+
+        <nav id="default2" class="navbar navbar-expand-md navbar-light bg-light default2">
+          <div id="nav-size" class="container-fuil">
+            <div class="row">
+              <div class="d-none d-sm-block d-md-none">
+                <a class="navbar-brand" href="#">Navbar</a>
+              </div>
+
+              <a id='logo-small' class="navbar-brand" href="/Home"><img src="https://net-city.net/img/favicon.png?v=new" alt=""></a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Prediction_Form">Countrywise Weather Prediction</a>
+                      <a class="dropdown-item" href="/Global_Prediction">Global Weather Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gases Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Carbon_Prediction">CO<sub>2</sub> Prediction</a>
+                      <a class="dropdown-item" href="/CO_Prediction">CO Prediction</a>
+                      <a class="dropdown-item" href="/NO2_Prediction">NO<sub>2</sub> Prediction</a>
+          <a class="dropdown-item" href="/OzonePrediction">O<sub>3</sub> Prediction</a>
+                      <a class="dropdown-item" href="/SO2_Prediction">SO<sub>2</sub> Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Graphs</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/ch4dynamicgraph" target="_blank">Graph 1</a>
+                      <a class="dropdown-item" href="/co2no2dynamicgraph" target="_blank">Graph 2</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Global Myths</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Global_yearly_average_tempreature">Claim 1</a>
+                      <a class="dropdown-item" href="/Measurement">Claim 2</a>
+                      <a class="dropdown-item" href="/Per_month">Claim 3</a>
+          <a class="dropdown-item" href="/Solar">Claim 4</a>
+                    </div>
+                  </li>
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/CO_Analysis">CO Analysis</a>
+                      <a class="dropdown-item" href="/CO2_Analysis">CO<sub>2</sub> Analysis</a>
+                      <a class="dropdown-item" href="/NO2_Analysis">NO<sub>2</sub> Analysis</a>
+          <a class="dropdown-item" href="/O3_Analysis">O<sub>3</sub> Analysis</a>
+          <a class="dropdown-item" href="/SO2_Analysis">SO<sub>2</sub> Analysis</a>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/UserManual" target="_blank">User Manual</a>
+                      <a class="dropdown-item" href="/InputSources" target="_blank">Input Sources</a>
+                    </div>
+                  </li>
+                  <li class="nav-item active"> <a href="/Feedback" class="nav-link">Feedback</a></li>
+                  <li class="nav-item"> <a href="https://github.com/thechillyweather" class="nav-link ">Github</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+</header>
+
+
+
+
+<div id="background-wrap">
+		<div class="x1">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x2">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x3">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x4">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x5">
+			<div class="cloud"></div>
+		</div>
+
+</div>
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class="col-md-12"> <br>
+                <h1>Carbon Monoxide Analysis</h1>
+
+		
+<center><button class="btn" onclick="document.location='https://drive.google.com/file/d/1TBskYxQeXhzNJEoAU-tVjqw93QRVOXdB/view?usp=sharing'"><i class="fa fa-cloud-download"></i> Input Sources </button></center>
+
+						
+
+
+					<h1>Introduction to Carbon Monoxide</h1>
+<ul>
+<li>Carbon monoxide is a colourless, odourless gas. Prolonged exposure to carbon monoxide rich atmospheres may be fatal.</li><br/> 
+<li>It is easily ignited. It is just lighter than air and a flame can flash back to the source of leak very easily.</li><br/>  
+<li>Under prolonged exposure to fire or intense heat the containers may violently rupture and rocket.</li><br/> 
+<li>Carbon monoxide is a one-carbon compound in which the carbon is joined only to a single oxygen. </li><br/> 
+<li>It has a role as a neurotoxin, a signalling molecule, a vasodilator agent, a neurotransmitter, a metabolite, a P450 inhibitor, 
+    a ligand, a biomarker, a probe, a human metabolite, a mouse metabolite, an EC 1.9.3.1 (cytochrome c oxidase) inhibitor and a mitochondrial respiratory-chain inhibitor.</li><br/>  
+<li>It is a one-carbon compound, a gas molecular entity and a carbon oxide. </li><br/> 
+<li>It is a conjugate base of a carbon monoxide(1+).</li><br/> 
+<li>Carbon monoxide reacts with water vapour at high temperatures, forming carbon dioxide and hydrogen; 
+this process has been used as a source of hydrogen for combination with nitrogen in the synthesis of ammonia. </li><br/> 
+<li>With caustic alkalies, carbon monoxide forms alkali formates, which can be converted into either formic acid or alkali oxalates for the production of oxalic acid. </li><br/> 
+<li>With certain metals, carbon monoxide forms compounds called carbonyls, many of which are volatile; this reaction has been used in the purification of nickel.</li><br/>  
+<li>Carbon monoxide and hydrogen are the starting materials in the manufacture of methanol and also are used in the preparation of aldehydes and alcohols from olefins and 
+in making mixtures of liquid hydrocarbons suitable for use as fuels. Gas mixtures containing varying ratios of carbon monoxide and molecular hydrogen are called synthesis gas.</li><br/> 
+</ul>
+
+
+
+<h1>Atmospheric presence</h1>
+
+<ul>
+<li>The streak of red, orange, and yellow across South America, Africa, and the Atlantic Ocean in this animation points to high levels of carbon monoxide on September 30, 2005.</li><br/> 
+<li>Carbon monoxide concentrations in Northern Hemisphere spring as measured with the MOPITT instrument
+    Carbon monoxide (CO) is present in small amounts (about 80 ppb) in the Earth's atmosphere.</li><br/> 
+<li>Most of the rest comes from chemical reactions with organic compounds emitted by human activities and natural origins due to photochemical reactions in the troposphere 
+    that generate about 5&times;1012 kilograms per year. Other natural sources of CO include volcanoes, forest and bushfires fires, and miscellaneous other forms of combustion such as fossil fuels.</li><br/> 
+<li>Small amounts are also emitted from the ocean, and from geological activity because carbon monoxide occurs dissolved in molten volcanic rock at high pressures in the Earth's mantle. </li><br/> 
+<li>Because natural sources of carbon monoxide are so variable from year to year, it is difficult to accurately measure natural emissions of the gas.</li><br/> 
+<li>Carbon monoxide has an indirect effect on radiative forcing by elevating concentrations of direct greenhouse gases, including methane and tropospheric ozone. </li><br/> 
+<li>CO can react chemically with other atmospheric constituents (primarily the hydroxyl radical, OH.) that would otherwise destroy methane. </li><br/> 
+<li>Through natural processes in the atmosphere, it is oxidized to carbon dioxide and ozone. Carbon monoxide is short-lived in the atmosphere (with an average lifetime of about one to two months),
+    and spatially variable in concentration.</li><br/> 
+<li>Due to its long lifetime in the mid-troposphere, carbon monoxide is also used as tracer for pollutant plumes.</li><br/> 
+</ul>
+
+
+
+
+
+<h1>Carbon Monoxide and Global Warming</h1>
+
+<ul>
+<li>When carbon monoxide is emitted into the atmosphere it effects the amount of greenhouse gases, which are linked to climate change and global warming. </li><br/> 
+<li>This means that land and sea temperature increases changing to ecosystems, increasing storm activity and causing other extreme weather events.</li><br/> 
+<li>Carbon monoxide is perhaps best known for the lethal effects it can have in homes with faulty appliances and poor ventilation. </li><br/> 
+<li>In the United States, the colorless, odorless gas kills about 430 people each year.</li><br/> 
+<li>However, the importance of carbon monoxide (CO) extends well beyond the indoor environment. </li><br/> 
+<li>Indoors or outdoors, the gas can disrupt the transport of oxygen by the blood, leading to heart and health problems. </li><br/> 
+<li>CO also contributes to the formation of tropospheric ozone, another air pollutant with unhealthy effects. </li><br/> 
+<li>And though carbon monoxide does not cause climate change directly, its presence affects the abundance of greenhouse gases such as methane and carbon dioxide.</li><br/> 
+<li>Though carbon monoxide does not cause climate change directly, its presence affects the abundance of greenhouse gases such as methane and carbon dioxide.</li><br/> 
+<li>Carbon monoxide forms whenever carbon-based fuels-including coal, oil, natural gas and wood-are burned.</li><br/> 
+<li>As a result, many human activities and inventions emit carbon monoxide,including the combustion engines in cars, trucks, planes, ships and other vehicles; 
+    the fires lit by farmers to clear forests or fields; and industrial processes that involve the combustion of fossil fuels. </li><br/> 
+<li>In addition, wildfires and volcanoes are natural sources of the gas.</li><br/> 
+<li>Little was known about the global distribution of carbon monoxide until the launch of the Terra satellite in 1999. </li><br/> 
+<li>Terra carries a sensor-Measurements of Pollution in the Troposphere (MOPITT)-that can measure carbon monoxide in a consistent fashion on a global scale. </li><br/> 
+<li>With a swath width of 640 kilometers (400 miles), MOPITT scans the entire atmosphere of Earth every three days.</li><br/> 
+<li>Since CO has a lifetime in the troposphere of about one month, it persists long enough to be transported long distances by winds, 
+    but not long enough to mix evenly throughout the atmosphere. </li><br/> 
+<li>As a result, MOPITT&rsquo;s maps show significant geographic variability and seasonality.</li><br/> 
+<li>To view month by month maps of carbon monoxide, visit the carbon monoxide page in Earth Observatory&rsquo;s global maps section.</li><br/> 
+<li>In Africa, for example, agricultural burning shifts north and south of the equator with the seasons, leading to seasonal shifts in carbon monoxide.</li><br/> 
+<li>Fires are also the dominant source of carbon monoxide pollution in South America and Australia. In the United States, Europe and eastern Asia, 
+    the highest carbon monoxide concentrations occur around urban areas and tend to be a result of vehicle and industrial emissions. </li><br/> 
+<li>However, wildfires burning over large areas in North America, Russia and China also can be an important source.</li><br/> 
+<li>Terra has been in orbit long enough to observe significant changes over time. To illustrate how global carbon monoxide concentrations have changed, 
+    maps of the mission&rsquo;s first (2000) and most recent full year (2014) of data are shown above. </li><br/> 
+<li>The maps depict yearly average concentrations of tropospheric carbon monoxide at an altitude of 3,700 meters (12,000 feet). </li><br/> 
+<li>Concentrations are expressed in parts per billion by volume (ppbv). A concentration of 1 ppbv means that for every billion molecules of gas in a measured volume, 
+    one of them is a carbon monoxide molecule. Yellow areas have little or no carbon monoxide, while progressively higher concentrations are shown in orange and red.</li><br/> 
+<li>Places where data was not available are gray. For both years, the data has been averaged, which eliminates seasonal variations.</li><br/> 
+</ul>
+
+<p></p>
+
+
+
+
+<center><img src="{{ url_for('static',filename='co_graph.jpg') }}" alt="co_graph"></center>
+
+			<h3> The above Graph Determines,</h3>
+			
+			<ul>
+			<li>x-axis shows Yers from 2000 to 2014</li><br/>
+
+			<li>y-axis shows Carbon Monoxide(CO) values in ppmv (parts per million by volume)</li><br/>
+
+			<li>A thick orange Line shows the MOnthly Deviation of CO values</li><br/>
+
+			<li>Dashed Orange line shows long term trend of CO</li><br/>
+				
+			</ul>
+
+
+<h2>OCCURANCE OF CO</h2>
+
+<table>
+  <tr>
+    <th>Concentration (ppmv)</th>
+    <th>Source</th>
+  </tr>
+
+  <tr>
+    <td>0.1</td>
+    <td>Natural atmosphere level (MOPITT)</td>
+  </tr>
+
+  <tr>
+    <td>0.5&dash;5</td>
+    <td>Average level in homes</td>
+  </tr>
+
+
+  <tr>
+    <td>5&dash;15</td>
+    <td>Near properly-adjusted gas stoves in homes, modern vehicle exhaust emissions</td>
+  </tr>
+
+  <tr>
+    <td>17</td>
+    <td>Atmosphere of Venus</td>
+  </tr>
+
+  <tr>
+    <td>100&dash;200</td>
+    <td>Exhaust from automobiles in the Mexico City central area in 1975</td>
+  </tr>
+
+  <tr>
+    <td>700</td>
+    <td>Atmosphere of Mars</td>
+  </tr>
+
+  <tr>
+    <td>&lt;1000</td>
+    <td>Car exhaust fumes after passing through catalytic converter</td>
+  </tr>
+ 
+  <tr>
+    <td>5,000</td>
+    <td>Exhaust from a home wood fire</td>
+  </tr>
+
+  <tr>
+    <td>30,000&dash;100,000</td>
+    <td>Undiluted warm car exhaust without a catalytic converter</td>
+  </tr>
+
+</table>
+
+
+<center><button class="btn" onclick="document.location='https://en.wikipedia.org/wiki/Carbon_monoxide'"><i class="fa fa-wikipedia-w"></i> Wikipedia</button></center>
+
+
+
+</div>
+
+             </div>
+        </div>
+    </div>
+
+</body>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
+  var $default2 = $("#default2");
+  $(window).scroll(function () {
+    if (
+      $(this).scrollTop() > 100 &&
+      $default2.hasClass("navbar-light bg-light default2")
+    ) {
+      $default2
+        .removeClass("navbar-light bg-light default2")
+        .addClass("navbar-dark bg-dark fixed-top");
+    } else if (
+      $(this).scrollTop() <= 100 &&
+      $default2.hasClass("navbar-dark bg-dark fixed-top")
+    ) {
+      $default2
+        .removeClass("navbar-dark bg-dark fixed-top")
+        .addClass("navbar-light bg-light default2");
+    }
+  }); //scroll
+});
+
+$(document).ready(function () {
+  var $default3 = $("#nav-size");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100 && $default3.hasClass("container-fuil")) {
+      $default3.removeClass("container-fuil").addClass("container");
+    } else if ($(this).scrollTop() <= 100 && $default3.hasClass("container")) {
+      $default3.removeClass("container").addClass("container-fuil");
+    }
+  }); //scroll
+});
+
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#logo-small").css("display", "block");
+  } else {
+    jQuery("#logo-small").css("display", "none");
+  }
+});
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  } else {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  }
+});
+    </script>
+</body>
+</html>

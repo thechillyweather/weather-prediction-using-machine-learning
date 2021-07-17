@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+     
+    <title>NO2 Detail Analysis</title>
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="{{ url_for('static',filename='logo.jpg') }}"" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>Home</title>
+  
+  
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://pro-next.fontawesome.com/releases/v5.7.2/css/all.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700'>
+<link rel='stylesheet' href='https://getbootstrap.com/docs/4.3/examples/carousel/carousel.css'>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='UserManual.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='tables.css') }}">
+   <!-- <link rel="stylesheet" href= "Stylesheets/clous.css">-->
+
+
+	
+   
+<style>
+
+body {
+  font-family: 'Seoge UI', sans-serif !important;
+	font-size:16px;
+	line-height:1.42857143;
+  padding-top:0;
+}
+hr {
+  margin:0;
+}
+header h6 i {
+    float: left;
+    font-size: 24px;
+    margin: 0;
+        margin-top: 0px;
+        margin-right: 0px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+header h6 span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 18px;    
+}
+.bd-placeholder-img {
+  background: linear-gradient(to right, #5d2d88, #ea4c11);
+}
+#default2.fixed-top {
+   position:fixed;
+   top:0; left:0;
+   width:100%;
+   background-color: #222;
+}
+#logo-small img{
+  max-height:40px;
+}
+#logo-small
+{
+  display:none;
+}
+img.logo {
+  max-width:100%;
+}
+</style>
+
+
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="yes" >
+  <header class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 m-auto d-none d-lg-block">
+        <a href="/Home"><img class="logo" src="{{ url_for('static',filename='logo.jpg') }}" alt=""></a>
+      </div>
+      <div class="col-md-12 col-lg-9">
+        
+        <hr>
+
+        <nav id="default2" class="navbar navbar-expand-md navbar-light bg-light default2">
+          <div id="nav-size" class="container-fuil">
+            <div class="row">
+              <div class="d-none d-sm-block d-md-none">
+                <a class="navbar-brand" href="#">Navbar</a>
+              </div>
+
+              <a id='logo-small' class="navbar-brand" href="/Home"><img src="https://net-city.net/img/favicon.png?v=new" alt=""></a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Prediction_Form">Countrywise Weather Prediction</a>
+                      <a class="dropdown-item" href="/Global_Prediction">Global Weather Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gases Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Carbon_Prediction">CO<sub>2</sub> Prediction</a>
+                      <a class="dropdown-item" href="/CO_Prediction">CO Prediction</a>
+                      <a class="dropdown-item" href="/NO2_Prediction">NO<sub>2</sub> Prediction</a>
+          <a class="dropdown-item" href="/OzonePrediction">O<sub>3</sub> Prediction</a>
+                      <a class="dropdown-item" href="/SO2_Prediction">SO<sub>2</sub> Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Graphs</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/ch4dynamicgraph" target="_blank">Graph 1</a>
+                      <a class="dropdown-item" href="/co2no2dynamicgraph" target="_blank">Graph 2</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Global Myths</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Global_yearly_average_tempreature">Claim 1</a>
+                      <a class="dropdown-item" href="/Measurement">Claim 2</a>
+                      <a class="dropdown-item" href="/Per_month">Claim 3</a>
+          <a class="dropdown-item" href="/Solar">Claim 4</a>
+                    </div>
+                  </li>
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/CO_Analysis">CO Analysis</a>
+                      <a class="dropdown-item" href="/CO2_Analysis">CO<sub>2</sub> Analysis</a>
+                      <a class="dropdown-item" href="/NO2_Analysis">NO<sub>2</sub> Analysis</a>
+          <a class="dropdown-item" href="/O3_Analysis">O<sub>3</sub> Analysis</a>
+          <a class="dropdown-item" href="/SO2_Analysis">SO<sub>2</sub> Analysis</a>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/UserManual" target="_blank">User Manual</a>
+                      <a class="dropdown-item" href="/InputSources" target="_blank">Input Sources</a>
+                    </div>
+                  </li>
+                  <li class="nav-item active"> <a href="/Feedback" class="nav-link">Feedback</a></li>
+                  <li class="nav-item"> <a href="https://github.com/thechillyweather" class="nav-link ">Github</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+</header>
+
+
+
+
+<div id="background-wrap">
+		<div class="x1">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x2">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x3">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x4">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x5">
+			<div class="cloud"></div>
+		</div>
+
+</div>
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class="col-md-12"> <br>
+                <h1>Nitrogen Dioxide Analysis</h1>
+                <div class="pull-left">
+                    
+<center><button class="btn" onclick="document.location='https://drive.google.com/file/d/1RFQdOwcN2k5frv5yH41-aB1wP3ZMvl9E/view?usp=sharing'"><i class="fa fa-cloud-download"></i> Input Sources </button></center>
+            
+
+
+
+				<h1>Introduction to Nitrogen Dioxide</h1>
+<ul>
+<li>Nitrogen dioxide is a chemical compound with the formula NO2 .It is one of several nitrogen oxides. </li><br/>
+<li>NO2 is an intermediate in the industrial synthesis of nitric acid, millions of tons of which are produced each year for use primarily in the production of fertilizers. </li><br/>
+<li>At higher temperatures it is a reddish-brown gas. It can be fatal if inhaled in large quantity. Nitrogen dioxide is a paramagnetic, bent molecule with C2v point group symmetry. </li><br/>
+<li>Nitrogen dioxide is a reddish-brown gas above 21.2 &deg;C (70.2 &deg;F; 294.3 K) with a pungent, acrid odor, becomes a yellowish-brown liquid below 21.2 &deg;C (70.2 &deg;F; 294.3 K), 
+    and converts to the colorless dinitrogen tetroxide (N<sub>2</sub>O<sub>4</sub>) below -11.2 &deg;C (11.8 &deg;F; 261.9 K). </li><br/>
+<li>The bond length between the nitrogen atom and the oxygen atom is 119.7 pm. This bond length is consistent with a bond order between one and two. </li><br/>
+<li>Unlike ozone, O<sub>3</sub>, the ground electronic state of nitrogen dioxide is a doublet state, since nitrogen has one unpaired electron,
+    which decreases the alpha effect compared with nitrite and creates a weak bonding interaction with the oxygen lone pairs.  </li><br/>
+<li>The lone electron in NO<sub>2</sub> also means that this compound is a free radical, so the formula for nitrogen dioxide is often written as NO2. </li><br/>
+<li>The reddish-brown color is a consequence of preferential absorption of light in the blue region of the spectrum (400 - 500 nm), 
+    although the absorption extends throughout the visible (at shorter wavelengths) and into the infrared (at longer wavelengths).  </li><br/>
+<li>Absorption of light at wavelengths shorter than about 400 nm results in photolysis (to form NO + O, atomic oxygen); 
+    in the atmosphere the addition of O atom so formed to O<sub>2</sub> results in ozone formation. </li><br/>
+</ul>
+
+
+
+
+<h1>Atmospheric Presence</h1>
+<ul>
+<li>The Atmosphere has set safety levels for environmental exposure to NO<sub>2</sub> at 100 ppb, averaged over one hour, and 53 ppb, averaged annually. </li><br/> 
+<li>As of February 2016, no area of the US was out of compliance with these limits and concentrations ranged between 10 and 20 ppb, and annual average ambient NO2 concentrations, 
+    as measured at area-wide monitors, have decreased by more than 40% since 1980. </li><br/>
+<li>However, NO2 concentrations in vehicles and near roadways are appreciably higher than those measured at monitors in the current network.  </li><br/>
+<li>In fact, in-vehicle concentrations can be 2-3 times higher than measured at nearby area-wide monitors. 
+<li>Near-roadway (within about 50 metres (160 ft)) concentrations of NO2 have been measured to be approximately 30 to 100% higher than concentrations away from roadways. </li><br/>
+<li>Individuals who spend time on or near major roadways can experience short-term NO<sub>2</sub> exposures considerably higher than measured by the current network. </li><br/>
+<li>Approximately 16% of U.S. housing units are located within 300 feet (91 m) of a major highway, railroad, or airport (approximately 48 million people).  </li><br/>
+<li>Studies show a connection between breathing elevated short-term NO2 concentrations, and increased visits to emergency departments and hospital admissions for respiratory issues, especially asthma. </li><br/>
+<li>NO2 exposure concentrations near roadways are of particular concern for susceptible individuals, including asthmatics, children, and the elderly. </li><br/>
+</ul>
+
+
+
+
+<h1>Global Warming and No2</h1>
+<ul>
+<li>Like other greenhouse gases, nitrous oxide absorbs radiation and traps heat in the atmosphere, where it can live for an average of 114 years, according to the EPA. </li><br/>
+<li>One pound of N2O warms the atmosphere about 300 times the amount that one pound of carbon dioxide does over a 100 year timescale. </li><br/>
+<li>Since it also has a shorter life span, reducing it could have a faster, significant impact on global warming.But the largest source of nitrous oxide is agriculture, 
+    particularly fertilized soil and animal waste, and that makes it harder to rein in.  </li><br/>
+<li>&ldquo;One could imagine limiting carbon dioxide, less methane, less of lots of things.But nitrous oxide is so much a food production issue.&rdquo; </li><br/>
+<li>A 2013 report by the United Nations found that since the pre-industrial era, nitrous oxide emissions from human activities have increased 20 percent.  </li><br/>
+<li>At the time, the authors wrote that if nothing was done, those emissions were expected to double by 2050.Despite nitrous oxide&rsquo;s role depleting the ozone layer, 
+    it is not included in the Montreal Protocol on Substances that Deplete the Ozone Layer, an international treaty that aims to restore the ozone layer by phasing out certain substances. </li><br/>
+<li>Nitrous oxide also poses a second threat: while in the stratosphere, nitrous oxide is exposed to sunlight and oxygen which converts the gas into nitrogen oxides.  </li><br/>
+<li>Nitrogen oxides can damage the ozone layer, which humans rely on to prevent most of the sun&rsquo;s ultraviolet radiation from reaching earth&rsquo;s surface. </li><br/>
+<li>That double-threat effect results in the gas&rsquo;s potency. One pound of N<sub>2</sub>O warms the atmosphere about 300 times the amount that one pound of carbon dioxide does over a 100 year timescale.  </li><br/>
+<li>Its potency and relatively long life make N2O a dangerous contributor to climate change. </li><br/>
+</ul>
+
+
+
+<p></p>
+
+
+<center><button class="btn" onclick="document.location='https://en.wikipedia.org/wiki/Nitrogen_dioxide'"><i class="fa fa-wikipedia-w"></i> Wikipedia</button></center>
+
+
+
+</div>
+
+             </div>
+        </div>
+    </div>
+
+</body>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
+  var $default2 = $("#default2");
+  $(window).scroll(function () {
+    if (
+      $(this).scrollTop() > 100 &&
+      $default2.hasClass("navbar-light bg-light default2")
+    ) {
+      $default2
+        .removeClass("navbar-light bg-light default2")
+        .addClass("navbar-dark bg-dark fixed-top");
+    } else if (
+      $(this).scrollTop() <= 100 &&
+      $default2.hasClass("navbar-dark bg-dark fixed-top")
+    ) {
+      $default2
+        .removeClass("navbar-dark bg-dark fixed-top")
+        .addClass("navbar-light bg-light default2");
+    }
+  }); //scroll
+});
+
+$(document).ready(function () {
+  var $default3 = $("#nav-size");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100 && $default3.hasClass("container-fuil")) {
+      $default3.removeClass("container-fuil").addClass("container");
+    } else if ($(this).scrollTop() <= 100 && $default3.hasClass("container")) {
+      $default3.removeClass("container").addClass("container-fuil");
+    }
+  }); //scroll
+});
+
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#logo-small").css("display", "block");
+  } else {
+    jQuery("#logo-small").css("display", "none");
+  }
+});
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  } else {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  }
+});
+    </script>
+</body>
+</html>
