@@ -1,0 +1,142 @@
+body {
+	background-color:lightgray;
+	text-align: justify;
+        text-justify: inter-word;
+}
+
+
+.div {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+h1 {
+	color: Red;
+    
+	font: bold;
+    
+	background-color: white;
+    
+	font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+h2 {
+	color: green;
+    
+	font: bold;
+    
+	background-color: white;
+    
+	font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+h3 {
+	color: green;
+    
+	font: bold;
+    
+	background-color: white;
+    
+	font-family: 'Times New Roman', Times, serif;
+} 
+
+
+
+img {
+    
+	padding-top: 10px;
+    
+	padding-right: 20px;
+    
+	padding-bottom: 10px;
+    
+	padding-left: 20px;
+
+}
+
+
+
+.container {
+	background-color: white;
+
+}
+
+
+
+
+
+
+.navbar-brand {
+
+	background-color:bisque;
+
+	 height: 64px;
+	font: bold;
+	font-size: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+  font-family : 'Titillium Sans And Dosis';
+  background-color: Azure;
+  padding: 18px;
+  font-size: 18px;
+   color: black;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px; 
+ 
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width:250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  transition:0.5 s;
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #4682B4;
+}
