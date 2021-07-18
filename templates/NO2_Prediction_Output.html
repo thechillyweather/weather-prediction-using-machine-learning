@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+
+
+<head>
+    
+<meta charset="UTF-8">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href= "{{ url_for('static',filename='styles.css') }}">
+
+
+    
+
+<title>NO2 Output</title>
+
+</head>
+
+
+
+<body >
+    
+		<br/>
+		<a href="/PNO2Prediction" style="font-size:1.5em;">&laquo; Previous</a>
+		<br/>
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+
+<center><h1><label>Predicted Values of NO2 in PPB is :-</label>  <input type="Textbox" value="{{ prediction }}" style="color:#000000;" readonly></h1></center>
+
+
+
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+		<br/>
+
+
+ 
+
+<Center><a href="{{ url_for('static',filename='NO2_Output.jpg') }}"><img src="{{ url_for('static',filename='NO2_Output.jpg') }}"></a></center>
+    
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+
+
+
+</html>

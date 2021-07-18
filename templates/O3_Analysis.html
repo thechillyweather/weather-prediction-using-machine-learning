@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+     
+    <title>O3 Analysis</title>
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="{{ url_for('static',filename='logo.jpg') }}"" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>Home</title>
+  
+  
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://pro-next.fontawesome.com/releases/v5.7.2/css/all.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700'>
+<link rel='stylesheet' href='https://getbootstrap.com/docs/4.3/examples/carousel/carousel.css'>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='UserManual.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='tables.css') }}">
+   <!-- <link rel="stylesheet" href= "Stylesheets/clous.css">-->
+
+
+	
+   
+<style>
+
+body {
+  font-family: 'Seoge UI', sans-serif !important;
+	font-size:16px;
+	line-height:1.42857143;
+  padding-top:0;
+}
+hr {
+  margin:0;
+}
+header h6 i {
+    float: left;
+    font-size: 24px;
+    margin: 0;
+        margin-top: 0px;
+        margin-right: 0px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+header h6 span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 18px;    
+}
+.bd-placeholder-img {
+  background: linear-gradient(to right, #5d2d88, #ea4c11);
+}
+#default2.fixed-top {
+   position:fixed;
+   top:0; left:0;
+   width:100%;
+   background-color: #222;
+}
+#logo-small img{
+  max-height:40px;
+}
+#logo-small
+{
+  display:none;
+}
+img.logo {
+  max-width:100%;
+}
+</style>
+
+
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="yes" >
+  <header class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 m-auto d-none d-lg-block">
+        <a href="/Home"><img class="logo" src="{{ url_for('static',filename='logo.jpg') }}" alt=""></a>
+      </div>
+      <div class="col-md-12 col-lg-9">
+        
+        <hr>
+
+        <nav id="default2" class="navbar navbar-expand-md navbar-light bg-light default2">
+          <div id="nav-size" class="container-fuil">
+            <div class="row">
+              <div class="d-none d-sm-block d-md-none">
+                <a class="navbar-brand" href="#">Navbar</a>
+              </div>
+
+              <a id='logo-small' class="navbar-brand" href="/Home"><img src="https://net-city.net/img/favicon.png?v=new" alt=""></a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Prediction_Form">Countrywise Weather Prediction</a>
+                      <a class="dropdown-item" href="/Global_Prediction">Global Weather Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gases Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Carbon_Prediction">CO<sub>2</sub> Prediction</a>
+                      <a class="dropdown-item" href="/CO_Prediction">CO Prediction</a>
+                      <a class="dropdown-item" href="/NO2_Prediction">NO<sub>2</sub> Prediction</a>
+          <a class="dropdown-item" href="/OzonePrediction">O<sub>3</sub> Prediction</a>
+                      <a class="dropdown-item" href="/SO2_Prediction">SO<sub>2</sub> Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Graphs</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/ch4dynamicgraph" target="_blank">Graph 1</a>
+                      <a class="dropdown-item" href="/co2no2dynamicgraph" target="_blank">Graph 2</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Global Myths</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Global_yearly_average_tempreature">Claim 1</a>
+                      <a class="dropdown-item" href="/Measurement">Claim 2</a>
+                      <a class="dropdown-item" href="/Per_month">Claim 3</a>
+          <a class="dropdown-item" href="/Solar">Claim 4</a>
+                    </div>
+                  </li>
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/CO_Analysis">CO Analysis</a>
+                      <a class="dropdown-item" href="/CO2_Analysis">CO<sub>2</sub> Analysis</a>
+                      <a class="dropdown-item" href="/NO2_Analysis">NO<sub>2</sub> Analysis</a>
+          <a class="dropdown-item" href="/O3_Analysis">O<sub>3</sub> Analysis</a>
+          <a class="dropdown-item" href="/SO2_Analysis">SO<sub>2</sub> Analysis</a>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/UserManual" target="_blank">User Manual</a>
+                      <a class="dropdown-item" href="/InputSources" target="_blank">Input Sources</a>
+                    </div>
+                  </li>
+                  <li class="nav-item active"> <a href="/Feedback" class="nav-link">Feedback</a></li>
+                  <li class="nav-item"> <a href="https://github.com/thechillyweather" class="nav-link ">Github</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+</header>
+
+
+
+<div id="background-wrap">
+		<div class="x1">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x2">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x3">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x4">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x5">
+			<div class="cloud"></div>
+		</div>
+
+</div>
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class="col-md-12"> <br>
+                <h1>O<sub>3</sub> Analysis</h1>
+
+                    <center><img src="{{ url_for('static',filename='o3_graph.svg') }}" alt="o3_graph" Height=720px Width=1080px> </center>
+
+
+
+				<h3> The above Graph Determines,</h3>
+			
+			<ul>
+			<li>x-axis shows Yers from 1961 to 2014</li><br/>
+
+			<li>y-axis shows Ozone(O<sub>3</sub>) values in tonnes</li><br/>
+
+			<li>Brown Line shows the natural emissions of O<sub>3</sub> </li><br/>
+
+			<li>Blue line shows drastically emissions of  O<sub>3</sub> values</li><br/>
+				
+			</ul>
+
+
+				
+			
+				
+				
+					
+
+
+
+<h2>Properties of O<sub>3</sub></h2>
+
+<table>
+  <tr>
+    <th>Chemical Formula</th>
+    <th>O<sub>3</sub></th>
+  </tr>
+
+  <tr>
+    <td>MOlar Mass</td>
+    <td>47.997 g&#x2219;mol-1</td>
+  </tr>
+
+  <tr>
+    <td>Appearance</td>
+    <td>Colourless to pale blue gas</td>
+  </tr>
+
+
+  <tr>
+    <td>Density</td>
+    <td>2.144 mg cm<sup>-3</sup> (at 0  &deg;C)</td>
+  </tr>
+
+  <tr>
+    <td>Melting Point</td>
+    <td>-192.2  &deg;C; -313.9  &deg;F; 81.0 K</td>
+  </tr>
+
+  <tr>
+    <td>Boiling Point</td>
+    <td>-112  &deg;C; -170  &deg;F; 161 K</td>
+  </tr>
+
+  <tr>
+    <td>Solubility in water</td>
+    <td>1.05 g L-1 (at 0  &deg;C)</td>
+  </tr>
+
+  <tr>
+    <td>Vapor pressure</td>
+    <td>55.7 atm (-12.15  &deg;C or 10.13  &deg;F or 261.00 K)</td>
+  </tr>
+ 
+  <tr>
+    <td>Magnetic susceptibility </td>
+    <td>+6.7&#x2219;10-6 cm<sup>3</sup>/mol</td>
+  </tr>
+
+  <tr>
+    <td>Refractive Index(n)</td>
+    <td>1.2226 (liquid), 1.00052 (gas, STP, 546 nm-note high dispersion)</td>
+  </tr>
+
+</table>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div class = 'row'>
+
+         
+                 <div class = 'col-md-9'>
+<button class="btn" onclick="document.location='https://drive.google.com/drive/folders/1xYhUQPQXnCVvyY_xRmjODhGWUjDib1cx?usp=sharing'"><i class="fa fa-cloud-download"></i> Input Sources </button>
+				</div>
+				 <div class = 'col-md-3'>
+<button class="btn" onclick="document.location='/O3_Detail_Analysis'"><i class="fa fa-download"></i> Read Full Article</button>
+				</div>
+</div>
+
+
+
+
+
+
+             </div>
+        </div>
+    </div>
+
+</body>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
+  var $default2 = $("#default2");
+  $(window).scroll(function () {
+    if (
+      $(this).scrollTop() > 100 &&
+      $default2.hasClass("navbar-light bg-light default2")
+    ) {
+      $default2
+        .removeClass("navbar-light bg-light default2")
+        .addClass("navbar-dark bg-dark fixed-top");
+    } else if (
+      $(this).scrollTop() <= 100 &&
+      $default2.hasClass("navbar-dark bg-dark fixed-top")
+    ) {
+      $default2
+        .removeClass("navbar-dark bg-dark fixed-top")
+        .addClass("navbar-light bg-light default2");
+    }
+  }); //scroll
+});
+
+$(document).ready(function () {
+  var $default3 = $("#nav-size");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100 && $default3.hasClass("container-fuil")) {
+      $default3.removeClass("container-fuil").addClass("container");
+    } else if ($(this).scrollTop() <= 100 && $default3.hasClass("container")) {
+      $default3.removeClass("container").addClass("container-fuil");
+    }
+  }); //scroll
+});
+
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#logo-small").css("display", "block");
+  } else {
+    jQuery("#logo-small").css("display", "none");
+  }
+});
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  } else {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  }
+});
+    </script>
+</body>
+</html>

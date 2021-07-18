@@ -1,0 +1,21 @@
+table {
+  	font-family:'Playfair Display', serif;
+	font-size: 18px; 
+	font-style: normal; 
+	font-variant: normal;	
+	font-weight: 500; 
+	line-height: 26.4px;
+ 
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

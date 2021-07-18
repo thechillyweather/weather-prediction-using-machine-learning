@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+     
+    <title>Plot 1</title>
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="{{ url_for('static',filename='logo.jpg') }}"" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>Home</title>
+  
+  
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://pro-next.fontawesome.com/releases/v5.7.2/css/all.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700'>
+<link rel='stylesheet' href='https://getbootstrap.com/docs/4.3/examples/carousel/carousel.css'>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='UserManual.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='tables.css') }}">
+   <!-- <link rel="stylesheet" href= "Stylesheets/clous.css">-->
+
+
+	
+   
+<style>
+
+body {
+  font-family: 'Seoge UI', sans-serif !important;
+	font-size:16px;
+	line-height:1.42857143;
+  padding-top:0;
+}
+hr {
+  margin:0;
+}
+header h6 i {
+    float: left;
+    font-size: 24px;
+    margin: 0;
+        margin-top: 0px;
+        margin-right: 0px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+header h6 span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 18px;    
+}
+.bd-placeholder-img {
+  background: linear-gradient(to right, #5d2d88, #ea4c11);
+}
+#default2.fixed-top {
+   position:fixed;
+   top:0; left:0;
+   width:100%;
+   background-color: #222;
+}
+#logo-small img{
+  max-height:40px;
+}
+#logo-small
+{
+  display:none;
+}
+img.logo {
+  max-width:100%;
+}
+</style>
+
+
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="yes" >
+  <header class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 m-auto d-none d-lg-block">
+        <a href="/Home"><img class="logo" src="{{ url_for('static',filename='logo.jpg') }}" alt=""></a>
+      </div>
+      <div class="col-md-12 col-lg-9">
+        
+        <hr>
+
+        <nav id="default2" class="navbar navbar-expand-md navbar-light bg-light default2">
+          <div id="nav-size" class="container-fuil">
+            <div class="row">
+              <div class="d-none d-sm-block d-md-none">
+                <a class="navbar-brand" href="#">Navbar</a>
+              </div>
+
+              <a id='logo-small' class="navbar-brand" href="/Home"><img src="https://net-city.net/img/favicon.png?v=new" alt=""></a>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Prediction_Form">Countrywise Weather Prediction</a>
+                      <a class="dropdown-item" href="/Global_Prediction">Global Weather Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gases Prediction</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Carbon_Prediction">CO<sub>2</sub> Prediction</a>
+                      <a class="dropdown-item" href="/CO_Prediction">CO Prediction</a>
+                      <a class="dropdown-item" href="/NO2_Prediction">NO<sub>2</sub> Prediction</a>
+          <a class="dropdown-item" href="/OzonePrediction">O<sub>3</sub> Prediction</a>
+                      <a class="dropdown-item" href="/SO2_Prediction">SO<sub>2</sub> Prediction</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Graphs</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/ch4dynamicgraph" target="_blank">Graph 1</a>
+                      <a class="dropdown-item" href="/co2no2dynamicgraph" target="_blank">Graph 2</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Global Myths</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/Global_yearly_average_tempreature">Claim 1</a>
+                      <a class="dropdown-item" href="/Measurement">Claim 2</a>
+                      <a class="dropdown-item" href="/Per_month">Claim 3</a>
+          <a class="dropdown-item" href="/Solar">Claim 4</a>
+                    </div>
+                  </li>
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analysis</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/CO_Analysis">CO Analysis</a>
+                      <a class="dropdown-item" href="/CO2_Analysis">CO<sub>2</sub> Analysis</a>
+                      <a class="dropdown-item" href="/NO2_Analysis">NO<sub>2</sub> Analysis</a>
+          <a class="dropdown-item" href="/O3_Analysis">O<sub>3</sub> Analysis</a>
+          <a class="dropdown-item" href="/SO2_Analysis">SO<sub>2</sub> Analysis</a>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="/UserManual" target="_blank">User Manual</a>
+                      <a class="dropdown-item" href="/InputSources" target="_blank">Input Sources</a>
+                    </div>
+                  </li>
+                  <li class="nav-item active"> <a href="/Feedback" class="nav-link">Feedback</a></li>
+                  <li class="nav-item"> <a href="https://github.com/thechillyweather" class="nav-link ">Github</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+</header>
+
+
+
+<div id="background-wrap">
+		<div class="x1">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x2">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x3">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x4">
+			<div class="cloud"></div>
+		</div>
+
+		<div class="x5">
+			<div class="cloud"></div>
+		</div>
+
+</div>
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class="col-md-8"> <br>
+                <h1>Global yearly average tempreature</h1>
+                <div class="pull-left">
+                    <img src="{{ url_for('static',filename='Global yearly average tempreature.jpg') }}" alt="Global yearly average tempreature"> 
+
+
+
+			<h3> The above Graph Determines,</h3>
+			
+			<ul>
+			<li>x-axis shows Yers from 1880 to 2020</li><br/>
+
+			<li>y-axis showsTempreature in Dergee Celcius(&deg;C)</li><br/>
+
+			<li>Green Line shows the Average Tempreature</li><br/>
+
+			<li>sky-blue line shows the 10 year Average Tempreature</li><br/>
+				
+			</ul>
+                </div>
+
+
+
+<p></p>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<button class="btn" onclick="document.location='https://drive.google.com/drive/folders/1J8EK5Tp7jvDwHBn9boAL2hVEAcXdAGt-?usp=sharing'"><i class="fa fa-cloud-download"></i> Input Sources </button>
+            </div>
+            <div class="col-md-4 pad top"> <br>
+                <h3>Observations</h3> <br>
+                <div class="pull-right">
+                   
+						<b>
+						<h3> Claim 1: The earth isn't actually getting warmer. Summer is hot and winter is cold. 
+						Temperature changes are seasonal and nothing more.
+						</h3>
+						</b>
+
+						<p>
+						<b> 
+							Analysis:
+						</b>
+						<p>
+								<ul>
+								<li>The global average temperature anomaly displays a steady increasing trend beginning around 1980. </li><br/>
+
+								<li>The global average temperature anomaly in January of 1980 and 2018 (end of the dataset) is 0.26 &deg;C and 0.85 C, respectively.</li><br/> 
+								
+								<li>Therefore, the global average temperature anomaly increased by 0.0155 &deg;C per year over that span of 38 years. </li><br>
+
+								<li>However, the temperature anomaly over the past 18 years (2000 to 2018) has been increasing at a rate of 0.0256 &deg;C per year, 
+								indicating that the global average temperature anomaly is increasing at a non-linear rate.</li><br/>
+
+								</ul>
+						</p>
+
+
+             </div>
+        </div>
+    </div>
+
+</body>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
+  var $default2 = $("#default2");
+  $(window).scroll(function () {
+    if (
+      $(this).scrollTop() > 100 &&
+      $default2.hasClass("navbar-light bg-light default2")
+    ) {
+      $default2
+        .removeClass("navbar-light bg-light default2")
+        .addClass("navbar-dark bg-dark fixed-top");
+    } else if (
+      $(this).scrollTop() <= 100 &&
+      $default2.hasClass("navbar-dark bg-dark fixed-top")
+    ) {
+      $default2
+        .removeClass("navbar-dark bg-dark fixed-top")
+        .addClass("navbar-light bg-light default2");
+    }
+  }); //scroll
+});
+
+$(document).ready(function () {
+  var $default3 = $("#nav-size");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100 && $default3.hasClass("container-fuil")) {
+      $default3.removeClass("container-fuil").addClass("container");
+    } else if ($(this).scrollTop() <= 100 && $default3.hasClass("container")) {
+      $default3.removeClass("container").addClass("container-fuil");
+    }
+  }); //scroll
+});
+
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#logo-small").css("display", "block");
+  } else {
+    jQuery("#logo-small").css("display", "none");
+  }
+});
+jQuery(window).scroll(function () {
+  if (jQuery(window).scrollTop() > 100) {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  } else {
+    jQuery("#nav-size").css("display", "block");
+    jQuery("#nav-size-small").css("display", "none");
+  }
+});
+    </script>
+</body>
+</html>
